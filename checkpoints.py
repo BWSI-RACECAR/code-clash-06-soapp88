@@ -34,15 +34,21 @@ class Solution:
         # return type: int
         largestGap= 0
         # TODO: Write code below to return an int with the solution to the prompt
+        def bubblesort(arr):
+            for i in range(len(checkpoints)):
+                for j in range(len(checkpoints) - 1):
+                    if checkpoints[j] > checkpoints[j+1]:
+                        temp = checkpoints[j]
+                        checkpoints[j] = checkpoints[j +1]
+                        checkpoints[j+1] = temp
+            return arr
+        checkpoints = bubblesort(checkpoints)
         gaps = []
-        for i in range(len(checkpoints)):
-            for j in range(i + 1, len(checkpoints) - 1):
-                if checkpoints[i] > checkpoints[j]:
-                    checkpoints[i], checkpoints[j] = checkpoints[j], checkpoints[i]
-                gaps.append(checkpoints[j] - checkpoints[i])
-                
+        for i in range(len(checkpoints)-1):
+            gaps.append(checkpoints[i+1]-checkpoints[i])
+        gaps = bubblesort(gaps)
+        return gaps[len(checkpoints)-2]
 
-        return max(gaps)
 
 
 
