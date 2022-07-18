@@ -42,7 +42,7 @@ class Solution:
                 gaps.append(checkpoints[j] - checkpoints[i])
                 
 
-        return max(ans)
+        return max(gaps)
 
 
 
