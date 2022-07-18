@@ -32,15 +32,15 @@ class Solution:
     def longestdistance(self, checkpoints):
         # type checkpoints: list
         # return type: int
-        largestGap= 0
+        
         # TODO: Write code below to return an int with the solution to the prompt
         def bubblesort(arr):
-            for i in range(len(checkpoints)):
-                for j in range(len(checkpoints) - 1):
-                    if checkpoints[j] > checkpoints[j+1]:
-                        temp = checkpoints[j]
-                        checkpoints[j] = checkpoints[j +1]
-                        checkpoints[j+1] = temp
+            for i in range(0, len(arr)):
+                for j in range(0,len(arr) - 1):
+                    if arr[j] > arr[j+1]:
+                        temp = arr[j]
+                        arr[j] = arr[j +1]
+                        arr[j+1] = temp
             return arr
         checkpoints = bubblesort(checkpoints)
         gaps = []
