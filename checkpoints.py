@@ -34,14 +34,16 @@ class Solution:
         # return type: int
         largestGap= 0
         # TODO: Write code below to return an int with the solution to the prompt
+        gaps = []
         for i in range(len(checkpoints)):
-            for j in range(i + 1, len(checkpoints)):
+            for j in range(i + 1, len(checkpoints) - 1):
                 if checkpoints[i] > checkpoints[j]:
                     checkpoints[i], checkpoints[j] = checkpoints[j], checkpoints[i]
+                gaps.append(checkpoints[j] - checkpoints[i])
+                
 
-                if checkpoints[j] - checkpoints[i] > largestGap:
-                    largestGap = checkpoints[j] - checkpoints[i]
-        return largestGap
+        return max(ans)
+
 
 
         
